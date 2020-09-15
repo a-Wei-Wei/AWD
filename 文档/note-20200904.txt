@@ -1,0 +1,27 @@
+1、innoDB，若 sql注入时  过滤了 information_schema 可用 innodb进行代替使用，但数据库版本要大于 5.5
+2、信息函数：user()      version（）     database（）    @@basedir   @@datadir     @@version @@port @@hostname
+3、字符串函数 ：char（n）
+4、条件：if(1=1,true,false)
+case when 1=1 then true elese false end;
+5、时间延时
+6、先 进行 字段数|查询，其次再进行 union select 查询。
+7、判断 数字注入 还是字符注入：
+若   ?id=2    正常
+就判断   ?id=3-1,   如果是 数字型，返回的应该是 id=2,   若失败，  就是 字符型的。
+8、再判断是否是 单引号闭合 还是 双引号闭合。
+9、order by 数字 + #
+10、upload-labs。。有docker
+11、先使用 w 查看已经登录的用户，使用 pkill -t pty/0(终端名) 如果踢不掉 加一个  -9  强制提
+12、命令 |、||、&、&& 的区别
+13、命令中 ；连续指令。
+14、命令中 空格的绕过：
+$IFS  如：ls$IFS-l
+x=$'ls\x20-l'&&x
+15、tcpkill
+16、写脚本 批量踢出 ssh登录的用户先 w   再 pkill -t -9 pty/0
+17、上网搜集、下载 cms 源码， 将比赛的网站源码作对比  文本对比工具：beyond compare
+18、审计代码 从用户输入的开始$_GET $_POST $_REQUEST
+19、高地服务器，需要提权。分值高，常规渗透测试，扫描端口 + 扫描服务 + 上传shell + 提权 + 维持权限。
+20、若靶机上无 编译工具，可在本机上相同系统编译好 再上传可执行文件
+21、修改 redis 密码 ：https://blog.csdn.net/qq_42815754/article/details/83827375
+22、了解thinkphp、yii等php框架

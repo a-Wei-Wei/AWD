@@ -1,0 +1,4 @@
+1、如果页面报错，需要在   /var/www/html/config/app.php 中得 debug 设为true，就可在页面上看到。其次需要完成之后需要赶紧设为false。
+    // 应用调试模式
+    'app_debug' => true,
+2、thinkphp 只能访问到每个模块中的控制器下的类中的方法、和网站静态目录，其他的是找不到的。

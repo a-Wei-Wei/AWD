@@ -1,0 +1,57 @@
+密码：3!2@1_5_0d1a0dfece88
+
+1、修改mysql / mariaDB 的密码，
+**修改之后，一定记得修改 cms中数据库得密码，否者会报错。（/var/www/html/config/database.php）
+
+首先利用主办方给的 账户密码登录。 root/root
+----------------------------------------方法一---------------------------------------------------------
+>mysql -u root  -p root
+>set password for root@localhost = password('123456');   (注意@后面的hostname 一定是要与 mysql.user表中的 root 对于的hostname对应，否则会失败，优先尝试localhost，是在不行就去查询)；
+查询user表
+>use mysql;
+>select Host,user,password from user;
++-----------+------+----------------------------------------------------------+
+| Host          | user    | password                                                                          |
++-----------+------+----------------------------------------------------------+
+| localhost   | root   | *8DCDD69CE7D121DE8013062AEAEB2A148910D50E |
++-----------+------+-----------------------------------------------------------+
+----------------------------------------方法二---------------------------------------------------------
+>mysql -u root  -p root
+>use mysql;
+>update user set password=password('qwe123') where user='root';
+这种有个弊端就是不能马上生效,直接采用第一种。
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2、修改 redis 的密码，存在两种修改方式，
+方式一：登录redis-cli，直接修改，这样修改不用重启服务，但是服务重启后，密码会还原。
+     	可能存在两种情况：
+	1、redis已经设置了密码：
+		>redis-cli -h ip -p port -a oldPasswd
+		>config get requirepass (查看当前密码)
+		> config set requirepass "qwe123"（加不加引号都行）
+		>auth qwe123 （需要验证一下才可以使用）
+	2、redis无密码
+		>redis-cli -h ip -p port
+		>config get requirepass (查看当前密码)
+		> config set requirepass "qwe123"（加不加引号都行）
+		>auth qwe123 （需要验证一下才可以使用）
+方式二：修改启动时的 配置文件，寻找其中的 requirepass 字段，取消其注释， 修改为： requirepass yourPassword
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3、修改tomcat 管理端 的密码
+一般配置文件：/etc/tomcat6 - 全局配置
+修改 /etc/tomcat版本号/conf/tomcat-user.xnl，修改一下密码，注意是不是checker的账户。
+<user username="admin（用户名）" password="admin（密码）" roles="manager-gui"/>
+
+4、修改weblogic 的密码？？？？
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5、修改 phpmyadmin、以及相关cms后台的密码  这个直接进数据 update from tale_name set password=password("aaa") where username = 'admin'
+
+
+5、修改ssh密码
+passwd 用户名
+新密码：3!2@1_5_0d1a0dfece88

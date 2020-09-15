@@ -1,0 +1,1 @@
+192.168.95.194 [ctf,ctf] >> exec result: aaaaaBBBBBBBccccccc

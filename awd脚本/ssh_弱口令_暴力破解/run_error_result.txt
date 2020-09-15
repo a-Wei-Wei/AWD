@@ -1,0 +1,49 @@
+192.168.95.1 [ctf,root] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,!@] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,wubao] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,password] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,123456] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,admin] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,12345] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,1234] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,p@ssw0rd] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.1 [ctf,ctf] >> exec result: [Errno None] Unable to connect to port 22 on 192.168.95.1
+192.168.95.2 [ctf,root] >> exec result: timed out
+192.168.95.2 [ctf,!@] >> exec result: timed out
+192.168.95.2 [ctf,wubao] >> exec result: timed out
+192.168.95.2 [ctf,password] >> exec result: timed out
+192.168.95.2 [ctf,123456] >> exec result: timed out
+192.168.95.2 [ctf,admin] >> exec result: timed out
+192.168.95.2 [ctf,12345] >> exec result: timed out
+192.168.95.2 [ctf,1234] >> exec result: timed out
+192.168.95.2 [ctf,p@ssw0rd] >> exec result: timed out
+192.168.95.2 [ctf,ctf] >> exec result: timed out
+192.168.95.194 [ctf,root] >> exec result: Authentication failed.
+192.168.95.194 [ctf,!@] >> exec result: Authentication failed.
+192.168.95.194 [ctf,wubao] >> exec result: Authentication failed.
+192.168.95.194 [ctf,password] >> exec result: Authentication failed.
+192.168.95.194 [ctf,123456] >> exec result: Authentication failed.
+192.168.95.194 [ctf,admin] >> exec result: Authentication failed.
+192.168.95.194 [ctf,12345] >> exec result: Authentication failed.
+192.168.95.194 [ctf,1234] >> exec result: Authentication failed.
+192.168.95.194 [ctf,p@ssw0rd] >> exec result: Authentication failed.
+192.168.95.254 [ctf,root] >> exec result: timed out
+192.168.95.254 [ctf,!@] >> exec result: timed out
+192.168.95.254 [ctf,wubao] >> exec result: timed out
+192.168.95.254 [ctf,password] >> exec result: timed out
+192.168.95.254 [ctf,123456] >> exec result: timed out
+192.168.95.254 [ctf,admin] >> exec result: timed out
+192.168.95.254 [ctf,12345] >> exec result: timed out
+192.168.95.254 [ctf,1234] >> exec result: timed out
+192.168.95.254 [ctf,p@ssw0rd] >> exec result: timed out
+192.168.95.254 [ctf,ctf] >> exec result: timed out
+192.168.95.195 [ctf,root] >> exec result: timed out
+192.168.95.195 [ctf,!@] >> exec result: timed out
+192.168.95.195 [ctf,wubao] >> exec result: timed out
+192.168.95.195 [ctf,password] >> exec result: timed out
+192.168.95.195 [ctf,123456] >> exec result: timed out
+192.168.95.195 [ctf,admin] >> exec result: timed out
+192.168.95.195 [ctf,12345] >> exec result: timed out
+192.168.95.195 [ctf,1234] >> exec result: timed out
+192.168.95.195 [ctf,p@ssw0rd] >> exec result: timed out
+192.168.95.195 [ctf,ctf] >> exec result: timed out

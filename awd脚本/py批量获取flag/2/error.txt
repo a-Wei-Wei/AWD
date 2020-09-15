@@ -1,0 +1,3 @@
+172.20.120.102
+HTTPConnectionPool(host='172.20.120.102', port=7001): Max retries exceeded with url: //web2/excute (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A98545E438>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
