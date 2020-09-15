@@ -1,6 +1,6 @@
 manager shell 是一个 大马：lionaneesh/lionaneesh
 
-Publishb.php     weekly 生成的， 密码为：32150d1a0dfece88
+Publishb.php     weevely 生成的， 密码为：32150d1a0dfece88
 
 publishr.php  是msfveom生成的，用于反弹shell，这个还是最好还是使用msf 的 meterpreter的脚本进行反弹shell的监听，主要是 方便
 
